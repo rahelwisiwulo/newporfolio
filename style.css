@@ -310,7 +310,120 @@
   }
   /* ===== PROJECTS SECTION ===== */
   
- 
+
+/* ===== PROJECTS SECTION ===== */
+#projects {
+    background: var(--dark-bg);
+    position: relative;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid var(--card-border);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
+}
+
+.project-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+}
+
+.project-info p {
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tech span {
+    background: rgba(110, 69, 226, 0.1);
+    color: var(--accent-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(110, 69, 226, 0.2);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments for projects */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .project-link {
+        justify-content: center;
+    }
+}
   /* ===== CONTACT SECTION ===== */
   
   #contact {
@@ -505,4 +618,5 @@
   .floating {
       animation: float 6s ease-in-out infinite;
   }
+
 
